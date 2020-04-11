@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subs": [
+    {
+      "name_ch": "Model700",
+      "name_en": "Model700",
+      "ATK": "101k",
+      "type": "rifle",
+      "speed": "57",
+      "size": "7",
+      "refit": [
+        {
+          "muzzle": true,
+          "grip": false,
+          "vane": true,
+          "magazine": true,
+          "stock": false
+        }
+      ]
+    }
+  ]
+}
