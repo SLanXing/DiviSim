@@ -1,11 +1,11 @@
 import 'dart:convert';
 
+import 'package:DiviSim/tools/LocalFileTool.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:divisim/tools/LocalFileTool.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class TabSimulateEquipPage extends StatefulWidget {

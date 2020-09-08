@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:divisim/page/TabEquipPage.dart';
-import 'package:divisim/page/TabSimulateEquipPage.dart';
-import 'package:divisim/page/TabPersonPage.dart';
 
-void main() => runApp(MyApp());
+import 'page/TabEquipPage.dart';
+import 'page/TabPersonPage.dart';
+import 'page/TabSimulateEquipPage.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -71,7 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
   void navigationTapped(int index) {
     _pageController.jumpToPage(index);
   }
