@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:DiviSim/tools/LocalFileTool.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
@@ -31,29 +30,41 @@ class _TabSimulateListState extends State<TabSimulateEquipPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Container(
-      width: double.maxFinite,
-      alignment: Alignment.center,
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        reverse: false,
-        primary: false,
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: EdgeInsets.all(5.0),
-        controller: scrollControler,
-        itemExtent: 50,
-        children: <Widget>[
-          _getSimListView(),
-          CupertinoButton(
-            color: Colors.lightBlue,
-            child: Text("+"),
-            onPressed: () {
-              print("新建配装");
-              loadAsset();
-            },
-          )
-        ],
-      ),
+    return Stack(
+      alignment: AlignmentDirectional.topStart,
+      fit: StackFit.expand,
+      children: <Widget>[
+        ListView(
+          scrollDirection: Axis.vertical,
+          reverse: false,
+          primary: false,
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: EdgeInsets.all(5.0),
+          controller: scrollControler,
+          itemExtent: 50,
+          children: <Widget>[
+            _getSimListView(),
+          ],
+        ),
+        Positioned(
+            right: 10.0,
+            bottom: 10.0,
+            child: Container(
+              width: 50.0,
+              height: 50.0,
+              child: CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: IconButton(
+                  icon: Icon(Icons.add),
+                  color: Colors.white,
+                  onPressed: () {
+                    print("新建配装");
+                    // _loadAsset();
+                  },
+                ),
+              ),
+            ))
+      ],
     );
   }
 
@@ -63,7 +74,7 @@ class _TabSimulateListState extends State<TabSimulateEquipPage>
     if (simList.isEmpty || 0 == length) {
       content = new Card(
         color: Colors.grey[50],
-        child: new Text("未发现数据"),
+        child: Center(child: new Text("未发现数据"),),
       );
     } else {
       content = new ListView.builder(
@@ -85,7 +96,7 @@ class _TabSimulateListState extends State<TabSimulateEquipPage>
     print("loadData");
   }
 
-  void loadAsset() async {
+  void _loadAsset() async {
     await rootBundle.loadString("asset/basicdata/typedata.json").then((value) {
       var _typejson = json.decode(value);
 //      print(_typejson);
