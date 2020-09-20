@@ -1,0 +1,26 @@
+[
+  {
+    "name_ch": "面罩",
+    "name_en": "mask"
+  },
+  {
+    "name_ch": "护甲",
+    "name_en": "armor"
+  },
+  {
+    "name_ch": "手套",
+    "name_en": "glove"
+  },
+  {
+    "name_ch": "背包",
+    "name_en": "backpack"
+  },
+  {
+    "name_ch": "护膝",
+    "name_en": "Kneepad"
+  },
+  {
+    "name_ch": "枪套",
+    "name_en": "holster"
+  }
+]
